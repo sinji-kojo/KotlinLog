@@ -10,8 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val dog = Dog("ポチ", 3)      // 名前をポチ、年齢3歳で、Dogのインスタンスを作る
+        val animal = Animal("ポチ", 3,"仕事")
+        animal.say()
 
-        dog.move()
+        val animal2 = Animal("ポチ", 3,"仕事")
+        animal2.think()
     }
 }

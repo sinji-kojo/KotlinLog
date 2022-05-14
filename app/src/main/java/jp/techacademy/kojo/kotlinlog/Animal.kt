@@ -1,15 +1,19 @@
 package jp.techacademy.kojo.kotlinlog
 
-abstract class Animal {
-    // プロパティ
-    var name: String
-    var age: Int
+import android.util.Log
 
+open class Animal : Human , Thinkable{
     // 引数付きコンストラクタ
-    constructor(name: String, age: Int) {
-        this.name = name
-        this.age = age
+    constructor(name: String, age: Int , hobby: String): super(name, age, hobby) {
     }
 
-    abstract fun say()
+    // Humanクラスのメソッドをオーバーライド
+    override fun say() {
+        Log.d("kotlintest", "私は名前は" + this.name + "です。年は" + this.age + "歳です。")
+    }
+
+    // Thinkableインターフェイスのメソッドをオーバーライド
+    override fun think() {
+        Log.d("kotlintest", "私は、" +this.hobby + "について考える。")
+    }
 }
